@@ -4,7 +4,7 @@ let s:PI = 3.14159265359
 let s:ZENITH = 90
 let g:sunset_latitude = 51.78
 let g:sunset_longitude = -1.483
-let g:sunset_local_offset = 1
+let g:sunset_utc_offset = 1
 
 function s:calculate(sunrise_or_sunset)
 	function! l:degrees_to_radians(degrees)
@@ -13,6 +13,10 @@ function s:calculate(sunrise_or_sunset)
 
 	function! l:radians_to_degrees(radians)
 		return (180 / s:PI) * a:radians
+	endfunction
+
+	function! s:minutes_from_decimal(number)
+		return float2nr(60.0 / 100 * (a:number - floor(a:number)) * 100)
 	endfunction
 
 	" 1. First calculate the day of the year
@@ -96,14 +100,20 @@ function s:calculate(sunrise_or_sunset)
 
 	" 9. Adjust back to UTC
 	let l:universal_time = l:mean_time - l:longitude_hour
-
-	if l:universal_time < 0
-		let l:universal_time = l:universal_time + 24
-	elseif l:universal_time >= 24
-		let l:universal_time = l:universal_time - 24
-	endif
 	
 	" 10. Convert l:universal_time value to local time zone of
 	" latitude/longitude
-	return l:universal_time + g:sunset_local_offset
+	let l:local_time = l:universal_time + g:sunset_utc_offset
+
+	if l:local_time < 0
+		let l:local_time = l:local_time + 24
+	elseif l:local_time >= 24
+		let l:local_time = l:local_time - 24
+	endif
+
+	let dict = {'hour': float2nr(l:local_time), 'minute': s:minutes_from_decimal(l:local_time)}
+	return dict
 endfunction
+
+let s:sunrise = s:calculate("sunrise")
+let s:sunset = s:calculate("sunset")
