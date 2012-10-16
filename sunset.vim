@@ -115,5 +115,19 @@ function s:calculate(sunrise_or_sunset)
 	return dict
 endfunction
 
+function g:sunset()
+	let l:current_time = {'hour': strftime("%H"), 'minute': strftime("%M")}
+
+	if (l:current_time.hour < s:sunrise.hour && l:current_time.minute < s:sunrise.minute) ||
+				\ (l:current_time.hour > s:sunset.hour && l:current_time.minute > s:sunset.minute)
+		set background=dark
+	else
+		set background=light
+	endif
+endfunction
+
 let s:sunrise = s:calculate("sunrise")
 let s:sunset = s:calculate("sunset")
+call g:sunset()
+
+autocmd CursorHold * call g:sunset()
