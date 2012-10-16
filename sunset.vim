@@ -130,4 +130,4 @@ let s:sunrise = s:calculate("sunrise")
 let s:sunset = s:calculate("sunset")
 call g:sunset()
 
-autocmd CursorHold * call g:sunset()
+autocmd CursorHold * nested call g:sunset()
