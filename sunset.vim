@@ -130,8 +130,6 @@ endfunction
 
 let s:sunrise_time = s:calculate("sunrise")
 let s:sunset_time = s:calculate("sunset")
-let g:sunset_sunrise_time = s:sunrise_time
-let g:sunset_sunset_time = s:sunset_time
 call g:sunset()
 
 autocmd CursorHold * nested call g:sunset()
