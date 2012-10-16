@@ -6,6 +6,10 @@ let g:sunset_latitude = 51.78
 let g:sunset_longitude = -1.483
 let g:sunset_utc_offset = 1
 
+function s:hours_and_minutes_to_minutes(hours, minutes)
+	return (a:hours * 60) + a:minutes
+endfunction
+
 function s:calculate(sunrise_or_sunset)
 	function! l:degrees_to_radians(degrees)
 		return (s:PI / 180) * a:degrees
@@ -111,23 +115,23 @@ function s:calculate(sunrise_or_sunset)
 		let l:local_time = l:local_time - 24
 	endif
 
-	let dict = {'hour': float2nr(l:local_time), 'minute': s:minutes_from_decimal(l:local_time)}
-	return dict
+	return s:hours_and_minutes_to_minutes(float2nr(l:local_time), s:minutes_from_decimal(l:local_time))
 endfunction
 
 function g:sunset()
-	let l:current_time = {'hour': strftime("%H"), 'minute': strftime("%M")}
+	let l:current_time = s:hours_and_minutes_to_minutes(strftime("%H"), strftime("%M"))
 
-	if (l:current_time.hour < s:sunrise.hour && l:current_time.minute < s:sunrise.minute) ||
-				\ (l:current_time.hour > s:sunset.hour && l:current_time.minute > s:sunset.minute)
+	if l:current_time <= s:sunrise_time || l:current_time >= s:sunset_time
 		set background=dark
 	else
 		set background=light
 	endif
 endfunction
 
-let s:sunrise = s:calculate("sunrise")
-let s:sunset = s:calculate("sunset")
+let s:sunrise_time = s:calculate("sunrise")
+let s:sunset_time = s:calculate("sunset")
+let g:sunset_sunrise_time = s:sunrise_time
+let g:sunset_sunset_time = s:sunset_time
 call g:sunset()
 
 autocmd CursorHold * nested call g:sunset()
