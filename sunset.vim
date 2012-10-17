@@ -2,6 +2,10 @@
 
 let s:PI = 3.14159265359
 let s:ZENITH = 90
+let s:SUNRISE = 1
+let s:SUNSET = 0
+lockvar s:PI s:ZENITH s:SUNRISE s:SUNSET
+
 let g:sunset_latitude = 51.78
 let g:sunset_longitude = -1.483
 let g:sunset_utc_offset = 1
@@ -10,7 +14,15 @@ function s:hours_and_minutes_to_minutes(hours, minutes)
 	return (a:hours * 60) + a:minutes
 endfunction
 
-function s:calculate(sunrise_or_sunset)
+function s:daytimep(current_time)
+	if a:current_time <= s:SUNRISE_TIME || a:current_time >= s:SUNSET_TIME
+		return 0
+	else
+		return 1
+	endif
+endfunction
+
+function s:calculate(sunrisep)
 	function! l:degrees_to_radians(degrees)
 		return (s:PI / 180) * a:degrees
 	endfunction
@@ -29,7 +41,7 @@ function s:calculate(sunrise_or_sunset)
 	" 2. Convert the longitude to hour value and calculate an approximate time
 	let l:longitude_hour = g:sunset_longitude / 15
 
-	let l:n = a:sunrise_or_sunset == "sunrise" ? 6 : 18
+	let l:n = a:sunrisep ? 6 : 18
 	let l:approximate_time = l:day_of_year + ((l:n - l:longitude_hour) / 24)
 
 	" 3. Calculate the Sun's mean anomaly
@@ -87,9 +99,9 @@ function s:calculate(sunrise_or_sunset)
 	endif
 
 	" 7b. Finish calculating H and convert into hours
-	if a:sunrise_or_sunset == "sunrise"
+	if a:sunrisep
 		let l:hour = 360 - l:radians_to_degrees(acos(l:cos_hour_angle))
-	elseif a:sunrise_or_sunset == "sunset"
+	else
 		let l:hour = l:radians_to_degrees(acos(l:cos_hour_angle))
 	endif
 
@@ -119,17 +131,15 @@ function s:calculate(sunrise_or_sunset)
 endfunction
 
 function g:sunset()
-	let l:current_time = s:hours_and_minutes_to_minutes(strftime("%H"), strftime("%M"))
-
-	if l:current_time <= s:sunrise_time || l:current_time >= s:sunset_time
-		set background=dark
-	else
+	if s:daytimep(s:hours_and_minutes_to_minutes(strftime("%H"), strftime("%M")))
 		set background=light
+	else
+		set background=dark
 	endif
 endfunction
 
-let s:sunrise_time = s:calculate("sunrise")
-let s:sunset_time = s:calculate("sunset")
+let s:SUNRISE_TIME = s:calculate(s:SUNRISE)
+let s:SUNSET_TIME = s:calculate(s:SUNSET)
 call g:sunset()
 
 autocmd CursorHold * nested call g:sunset()
