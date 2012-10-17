@@ -6,6 +6,9 @@ let s:SUNRISE = 1
 let s:SUNSET = 0
 lockvar s:PI s:ZENITH s:SUNRISE s:SUNSET
 
+let s:DAYTIME_CHECKED = 0
+let s:NIGHTTIME_CHECKED = 0
+
 let g:sunset_latitude = 51.78
 let g:sunset_longitude = -1.483
 let g:sunset_utc_offset = 1
@@ -127,14 +130,23 @@ function s:calculate(sunrisep)
 		let l:local_time = l:local_time - 24
 	endif
 
-	return s:hours_and_minutes_to_minutes(float2nr(l:local_time), s:minutes_from_decimal(l:local_time))
+	return s:hours_and_minutes_to_minutes(float2nr(l:local_time),
+				\ s:minutes_from_decimal(l:local_time))
 endfunction
 
 function g:sunset()
 	if s:daytimep(s:hours_and_minutes_to_minutes(strftime("%H"), strftime("%M")))
-		set background=light
+		if s:DAYTIME_CHECKED != 1
+			set background=light
+			let s:DAYTIME_CHECKED = 1
+			let s:NIGHTTIME_CHECKED = 0
+		endif
 	else
-		set background=dark
+		if s:NIGHTTIME_CHECKED != 1
+			set background=dark
+			let s:NIGHTTIME_CHECKED = 1
+			let s:DAYTIME_CHECKED = 0
+		endif
 	endif
 endfunction
 
