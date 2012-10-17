@@ -4,8 +4,8 @@ FRONT MATTER                                           *sunset-front-matter*
 
          Author: Alastair Touw <alastair@touw.me.uk>
         License: Distributed under the same terms as Vim. See |license|.
-        Version: 1.0.0
-    Last Change: 2012 Oct 17
+        Version: 1.0.1
+    Last Change: 2012 Oct 18
 
 INTRODUCTION                                    *sunset* *sunset-introduction*
 
@@ -26,7 +26,7 @@ CONTENTS                                                   *sunset-contents*
     iii. Contents . . . . . . . . . . . . . . . . . . . |sunset-contents|
       1. Options  . . . . . . . . . . . . . . . . . . . |sunset-options|
           a) 'g:loaded_sunset'  . . . . . . . . . . . . |'loaded_sunset'|
-          b) 'g:sunset_latitude' & 'g:sunset_longitude' |'lat-long'|
+          b) 'g:sunset_latitude' & 'g:sunset_longitude' |lat-long|
           c) 'g:sunset_utc_offset'  . . . . . . . . . . |'sunset_utc_offset'|
       2. A Reminder of Privacy  . . . . . . . . . . . . |sunset-privacy|
       3. Credit . . . . . . . . . . . . . . . . . . . . |sunset-credit|
