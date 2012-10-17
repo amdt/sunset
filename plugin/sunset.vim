@@ -1,4 +1,36 @@
-" Reference: http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
+"
+" sunset.vim - Automatically set background on local sunrise/sunset time.
+"
+"  Maintainer: Alastair Touw <alastair@touw.me.uk>
+"     Website: http://github.com/amdt/sunset
+"     License: Distributed under the same terms as Vim. See ':help license'.
+"     Version: 1.0.0
+" Last Change: 2012 Oct 17
+"       Usage: See 'doc/sunset.txt' or ':help sunset' if installed.
+
+if exists("g:loaded_sunset")
+	finish
+endif
+let g:loaded_sunset = 1
+
+let s:sunset_required_options =
+			\ ["g:sunset_latitude", "g:sunset_longitude", "g:sunset_utc_offset"]
+
+for option in s:sunset_required_options
+	if exists(option)
+		call filter(s:sunset_required_options, 'v:val != option')
+	endif
+endfor
+
+if !empty(s:sunset_required_options)
+	for option in s:sunset_required_options
+		echoerr printf("%s missing! See ':help %s' for more details.", option, option)
+	endfor
+	finish
+endif
+
+let s:save_cpo = &cpo
+set cpo&vim
 
 let s:PI = 3.14159265359
 let s:ZENITH = 90
@@ -8,10 +40,6 @@ lockvar s:PI s:ZENITH s:SUNRISE s:SUNSET
 
 let s:DAYTIME_CHECKED = 0
 let s:NIGHTTIME_CHECKED = 0
-
-let g:sunset_latitude = 51.78
-let g:sunset_longitude = -1.483
-let g:sunset_utc_offset = 1
 
 function s:hours_and_minutes_to_minutes(hours, minutes)
 	return (a:hours * 60) + a:minutes
@@ -134,7 +162,7 @@ function s:calculate(sunrisep)
 				\ s:minutes_from_decimal(l:local_time))
 endfunction
 
-function g:sunset()
+function s:sunset()
 	if s:daytimep(s:hours_and_minutes_to_minutes(strftime("%H"), strftime("%M")))
 		if s:DAYTIME_CHECKED != 1
 			set background=light
@@ -152,6 +180,9 @@ endfunction
 
 let s:SUNRISE_TIME = s:calculate(s:SUNRISE)
 let s:SUNSET_TIME = s:calculate(s:SUNSET)
-call g:sunset()
+call s:sunset()
 
-autocmd CursorHold * nested call g:sunset()
+autocmd CursorHold * nested call s:sunset()
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
