@@ -4,7 +4,7 @@ FRONT MATTER                                           *sunset-front-matter*
 
          Author: Alastair Touw <alastair@touw.me.uk>
         License: Distributed under the same terms as Vim. See |license|.
-        Version: 1.0.1
+        Version: 1.0.2
     Last Change: 2012 Oct 18
 
 INTRODUCTION                                    *sunset* *sunset-introduction*
@@ -62,7 +62,7 @@ degrees, 46 minutes and 12 seconds East), you might set these options
 as follows:
 
     let g:sunset_latitude = 35.67
-    let s:sunset_longitude = 139.8
+    let g:sunset_longitude = 139.8
 
 Note: Don't forget, negative values South and West.
 

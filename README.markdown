@@ -1,4 +1,4 @@
-Version: 1.0.1
+Version: 1.0.2
 Last Change: 2012 Oct 18
 
 # Sunset
@@ -38,7 +38,7 @@ If you lived in Tokyo (35 degrees, 40 minutes and 12 seconds North; 139 degrees,
 
 ```vim
 let g:sunset_latitude = 35.67
-let s:sunset_longitude = 139.8
+let g:sunset_longitude = 139.8
 ```
 
 *Note:* Don't forget, negative values South and West.
@@ -67,4 +67,4 @@ Sunset uses an algorithm for finding the local sunrise and sunset times [publish
 
 ## License
 
-Distributed under the same terms as Vim. See ':help license'.
+Distributed under the same terms as Vim. See `:help license`.
