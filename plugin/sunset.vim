@@ -4,7 +4,7 @@
 "  Maintainer: Alastair Touw <alastair@touw.me.uk>
 "     Website: http://github.com/amdt/sunset
 "     License: Distributed under the same terms as Vim. See ':help license'.
-"     Version: 1.0.1
+"     Version: 1.0.2
 " Last Change: 2012 Oct 18
 "       Usage: See 'doc/sunset.txt' or ':help sunset' if installed.
 
