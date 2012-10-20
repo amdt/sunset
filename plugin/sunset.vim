@@ -69,6 +69,10 @@ function s:daytimep(current_time)
 endfunction
 
 function s:calculate(sunrisep)
+    " This algorithm for finding the local sunrise and sunset times published
+    " in the Almanac for Computers, 1990, by the Nautical Almanac Office of the
+    " United States Naval Observatory, as detailed
+    " here: http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
 	function! l:degrees_to_radians(degrees)
 		return (s:PI / 180) * a:degrees
 	endfunction
