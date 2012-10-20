@@ -13,6 +13,21 @@ if exists("g:loaded_sunset")
 endif
 let g:loaded_sunset = 1
 
+if v:version < 703
+	echoerr "Requires Vim 7.3."
+	finish
+endif
+
+if !has("float")
+	echoerr "Requires Vim be compiled with +float support."
+	finish
+endif
+
+if !exists("*strftime")
+	echoerr "Requires a system with strftime()"
+	finish
+endif
+
 let s:sunset_required_options =
 			\ ["g:sunset_latitude", "g:sunset_longitude", "g:sunset_utc_offset"]
 
