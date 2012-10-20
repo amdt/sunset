@@ -4,14 +4,29 @@
 "  Maintainer: Alastair Touw <alastair@touw.me.uk>
 "     Website: http://github.com/amdt/sunset
 "     License: Distributed under the same terms as Vim. See ':help license'.
-"     Version: 1.0.2
-" Last Change: 2012 Oct 18
+"     Version: 1.0.3
+" Last Change: 2012 Oct 20
 "       Usage: See 'doc/sunset.txt' or ':help sunset' if installed.
 
 if exists("g:loaded_sunset")
 	finish
 endif
 let g:loaded_sunset = 1
+
+if v:version < 703
+	echoerr "Requires Vim 7.3."
+	finish
+endif
+
+if !has("float")
+	echoerr "Requires Vim be compiled with +float support."
+	finish
+endif
+
+if !exists("*strftime")
+	echoerr "Requires a system with strftime()"
+	finish
+endif
 
 let s:sunset_required_options =
 			\ ["g:sunset_latitude", "g:sunset_longitude", "g:sunset_utc_offset"]
@@ -54,6 +69,10 @@ function s:daytimep(current_time)
 endfunction
 
 function s:calculate(sunrisep)
+    " This algorithm for finding the local sunrise and sunset times published
+    " in the Almanac for Computers, 1990, by the Nautical Almanac Office of the
+    " United States Naval Observatory, as detailed
+    " here: http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
 	function! l:degrees_to_radians(degrees)
 		return (s:PI / 180) * a:degrees
 	endfunction
