@@ -15,7 +15,7 @@ If you feel that Sunset can be improved, pull requests and issues are appreciate
 
 ## Installation
 
-If you don't already have a preferred installation method, I recommend installing [Vundle](https://github.com/gmarik/vundle). Once done, add the declaration for Sunset to your `.vimrc`:
+If you don't already have a preferred installation method, I recommend installing [Vundle](http://github.com/gmarik/vundle). Once done, add the declaration for Sunset to your `.vimrc`:
 
 ```vim
 Bundle 'amdt/sunset'
@@ -37,6 +37,7 @@ And install:
     - %j returns the current day of the year.
     - %H returns the current hour of the day in 24-hour time.
     - %M returns the current minute of the hour.
+* A colorscheme with light and dark variants, such as [Solarized](http://github.com/altercation/vim-colors-solarized) or [Hemisu](http://github.com/noahfrederick/Hemisu).
 
 ## Configuration
 

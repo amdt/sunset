@@ -56,7 +56,7 @@ With a Plugin Manager:                  *sunset-installation-plugin-manager*
 Vundle: ~
 
 If you don't already have a preferred manager, I recommend installing Vundle
-(https://github.com/gmarik/vundle). Once done, add the declaration for Sunset
+(http://github.com/gmarik/vundle). Once done, add the declaration for Sunset
 to your `.vimrc`:
 
     Bundle 'amdt/sunset'
@@ -111,6 +111,9 @@ REQUIREMENTS                                           *sunset-requirements*
         - %j returns the current day of the year.
         - %H returns the current hour of the day in 24-hour time.
         - %M returns the current minute of the hour.
+    * A |colorscheme| with both light and dark variants, such as Solarized
+      (http://github.com/altercation/vim-colors-solarized) or Hemisu
+      (http://github.com/noahfrederick/Hemisu)
 
 CONFIGURATION                                         *sunset-configuration*
 
@@ -193,7 +196,7 @@ detailed here: http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
 Special thanks: ~
 
     * Gueorgui Tcherednitchenko --- Whose tweet
-      (https://twitter.com/gueorgui/statuses/250765514975113216)
+      (http://twitter.com/gueorgui/statuses/250765514975113216)
       inspired the development of this plugin.
     * Nick Rogers --- Whose testing helped define Sunset's requirements.
 
