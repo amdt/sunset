@@ -34,9 +34,9 @@ And install:
 * Sunset requires Vim 7.3
 * Vim compiled with `+float` support. Use `:version` to check if this feature is available in your build.
 * Requires a system with `strftime()`, with the following format options:
-    - %j returns the current day of the year.
-    - %H returns the current hour of the day in 24-hour time.
-    - %M returns the current minute of the hour.
+    - `%j` returns the current day of the year.
+    - `%H` returns the current hour of the day in 24-hour time.
+    - `%M` returns the current minute of the hour.
 * A colorscheme with light and dark variants, such as [Solarized](http://github.com/altercation/vim-colors-solarized) or [Hemisu](http://github.com/noahfrederick/Hemisu).
 
 ## Configuration
