@@ -195,6 +195,9 @@ function s:sunset()
 			let s:DAYTIME_CHECKED = 0
 		endif
 	endif
+	if exists('*g:sunset_callback')
+		call g:sunset_callback()
+	endif
 endfunction
 
 let s:SUNRISE_TIME = s:calculate(s:SUNRISE)
