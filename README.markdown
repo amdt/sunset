@@ -81,7 +81,7 @@ let g:sunset_utc_offset = 9 " Tokyo
 
 *Note:* Sunset does not handle any daylight savings civil times.
 
-## A Reminder of Privacy
+## A Reminder on Privacy
 
 For those of us who publish our dotfiles on Github etc., please take this as a gentle reminder that out of habit you might be about to publish your whereabouts to the greater public. If this concerns you, using the location of your nearest large city might suffice; Sunset will be plenty accurate enough.
 
