@@ -1,5 +1,5 @@
-Version: 1.0.3  
-Last Change: 2012 Oct 20
+Version: 1.1.0  
+Last Change: 2012 Oct 28
 
 # Sunset
 
@@ -34,9 +34,9 @@ And install:
 * Sunset requires Vim 7.3
 * Vim compiled with `+float` support. Use `:version` to check if this feature is available in your build.
 * Requires a system with `strftime()`, with the following format options:
-    - %j returns the current day of the year.
-    - %H returns the current hour of the day in 24-hour time.
-    - %M returns the current minute of the hour.
+    - `%j` returns the current day of the year.
+    - `%H` returns the current hour of the day in 24-hour time.
+    - `%M` returns the current minute of the hour.
 * A colorscheme with light and dark variants, such as [Solarized](http://github.com/altercation/vim-colors-solarized) or [Hemisu](http://github.com/noahfrederick/Hemisu).
 
 ## Configuration
@@ -81,7 +81,7 @@ let g:sunset_utc_offset = 9 " Tokyo
 
 *Note:* Sunset does not handle any daylight savings civil times.
 
-## A Reminder of Privacy
+## A Reminder on Privacy
 
 For those of us who publish our dotfiles on Github etc., please take this as a gentle reminder that out of habit you might be about to publish your whereabouts to the greater public. If this concerns you, using the location of your nearest large city might suffice; Sunset will be plenty accurate enough.
 
