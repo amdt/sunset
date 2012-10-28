@@ -7,6 +7,8 @@
 "     Version: 1.1.0
 " Last Change: 2012 Oct 28
 "       Usage: See 'doc/sunset.txt' or ':help sunset' if installed.
+"
+" GetLatestVimScripts: 4277 18920 :AutoInstall: Sunset
 
 if exists("g:loaded_sunset")
 	finish
