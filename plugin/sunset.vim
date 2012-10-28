@@ -184,19 +184,20 @@ endfunction
 function s:sunset()
 	if s:daytimep(s:hours_and_minutes_to_minutes(strftime("%H"), strftime("%M")))
 		if s:DAYTIME_CHECKED != 1
-			set background=light
+			if exists('*g:sunset_daytime_callback')
+				call g:sunset_daytime_callback()
+			endif
 			let s:DAYTIME_CHECKED = 1
 			let s:NIGHTTIME_CHECKED = 0
 		endif
 	else
 		if s:NIGHTTIME_CHECKED != 1
-			set background=dark
+			if exists('*g:sunset_nighttime_callback')
+				call g:sunset_nighttime_callback()
+			endif
 			let s:NIGHTTIME_CHECKED = 1
 			let s:DAYTIME_CHECKED = 0
 		endif
-	endif
-	if exists('*g:sunset_callback')
-		call g:sunset_callback()
 	endif
 endfunction
 
