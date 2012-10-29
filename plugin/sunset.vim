@@ -29,6 +29,10 @@ if !exists("*strftime")
 	call add(s:errors, "Requires a system with strftime()")
 endif
 
+if exists('*g:sunset_callback()')
+	call add(s:errors, "sunset_callback() has been deprecated. Please see 'sunset_daytime_callback()' & 'sunset_nighttime_callback()'")
+endif
+
 let s:required_options =
 			\ ["g:sunset_latitude", "g:sunset_longitude", "g:sunset_utc_offset"]
 
