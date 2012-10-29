@@ -7,39 +7,46 @@
 "     Version: 1.1.0
 " Last Change: 2012 Oct 28
 "       Usage: See 'doc/sunset.txt' or ':help sunset' if installed.
+"
+" GetLatestVimScripts: 4277 18920 :AutoInstall: Sunset
 
 if exists("g:loaded_sunset")
 	finish
 endif
 let g:loaded_sunset = 1
 
+let s:errors = []
+
 if v:version < 703
-	echoerr "Requires Vim 7.3."
-	finish
+	call add(s:errors, "Requires Vim 7.3")
 endif
 
 if !has("float")
-	echoerr "Requires Vim be compiled with +float support."
-	finish
+	call add(s:errors, "Requires Vim be compiled with +float support.")
 endif
 
 if !exists("*strftime")
-	echoerr "Requires a system with strftime()"
-	finish
+	call add(s:errors, "Requires a system with strftime()")
 endif
 
-let s:sunset_required_options =
+let s:required_options =
 			\ ["g:sunset_latitude", "g:sunset_longitude", "g:sunset_utc_offset"]
 
-for option in s:sunset_required_options
+for option in s:required_options
 	if exists(option)
-		call filter(s:sunset_required_options, 'v:val != option')
+		call filter(s:required_options, 'v:val != option')
 	endif
 endfor
 
-if !empty(s:sunset_required_options)
-	for option in s:sunset_required_options
-		echoerr printf("%s missing! See ':help %s' for more details.", option, option)
+if !empty(s:required_options)
+	for option in s:required_options
+		call add(s:errors, printf("%s missing! See ':help %s' for more details.", option, option))
+	endfor
+endif
+
+if !empty(s:errors)
+	for error in s:errors
+		echoerr error
 	endfor
 	finish
 endif
