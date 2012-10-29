@@ -30,7 +30,7 @@ if !exists("*strftime")
 endif
 
 if exists('*g:sunset_callback')
-	call add(s:errors, "sunset_callback() has been deprecated. Please see `:h 'sunset_daytime_callback()'` & `:h 'sunset_nighttime_callback()'`")
+	call add(s:errors, "sunset_callback() has been deprecated and will be removed in the next release. Please see `:h 'sunset_daytime_callback()'` & `:h 'sunset_nighttime_callback()'`")
 endif
 
 let s:required_options =
@@ -213,6 +213,9 @@ function s:sunset()
 			let s:NIGHTTIME_CHECKED = 1
 			let s:DAYTIME_CHECKED = 0
 		endif
+	endif
+	if exists('*g:sunset_callback')
+		call g:sunset_callback()
 	endif
 endfunction
 
