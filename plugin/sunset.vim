@@ -186,6 +186,8 @@ function s:sunset()
 		if s:DAYTIME_CHECKED != 1
 			if exists('*g:sunset_daytime_callback')
 				call g:sunset_daytime_callback()
+			else
+				set background=light
 			endif
 			let s:DAYTIME_CHECKED = 1
 			let s:NIGHTTIME_CHECKED = 0
@@ -194,6 +196,8 @@ function s:sunset()
 		if s:NIGHTTIME_CHECKED != 1
 			if exists('*g:sunset_nighttime_callback')
 				call g:sunset_nighttime_callback()
+			else
+				set background=dark
 			endif
 			let s:NIGHTTIME_CHECKED = 1
 			let s:DAYTIME_CHECKED = 0
