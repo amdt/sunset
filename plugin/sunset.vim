@@ -29,6 +29,10 @@ if !exists("*strftime")
 	call add(s:errors, "Requires a system with strftime()")
 endif
 
+if exists('*g:sunset_callback')
+	call add(s:errors, "sunset_callback() has been deprecated. Please see `:h 'sunset_daytime_callback()'` & `:h 'sunset_nighttime_callback()'`")
+endif
+
 let s:required_options =
 			\ ["g:sunset_latitude", "g:sunset_longitude", "g:sunset_utc_offset"]
 
@@ -191,19 +195,24 @@ endfunction
 function s:sunset()
 	if s:daytimep(s:hours_and_minutes_to_minutes(strftime("%H"), strftime("%M")))
 		if s:DAYTIME_CHECKED != 1
-			set background=light
+			if exists('*g:sunset_daytime_callback')
+				call g:sunset_daytime_callback()
+			else
+				set background=light
+			endif
 			let s:DAYTIME_CHECKED = 1
 			let s:NIGHTTIME_CHECKED = 0
 		endif
 	else
 		if s:NIGHTTIME_CHECKED != 1
-			set background=dark
+			if exists('*g:sunset_nighttime_callback')
+				call g:sunset_nighttime_callback()
+			else
+				set background=dark
+			endif
 			let s:NIGHTTIME_CHECKED = 1
 			let s:DAYTIME_CHECKED = 0
 		endif
-	endif
-	if exists('*g:sunset_callback')
-		call g:sunset_callback()
 	endif
 endfunction
 
