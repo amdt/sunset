@@ -29,8 +29,8 @@ if !exists("*strftime")
 	call add(s:errors, "Requires a system with strftime()")
 endif
 
-if exists('*g:sunset_callback()')
-	call add(s:errors, "sunset_callback() has been deprecated. Please see 'sunset_daytime_callback()' & 'sunset_nighttime_callback()'")
+if exists('*g:sunset_callback')
+	call add(s:errors, "sunset_callback() has been deprecated. Please see `:h 'sunset_daytime_callback()'` & `:h 'sunset_nighttime_callback()'`")
 endif
 
 let s:required_options =
