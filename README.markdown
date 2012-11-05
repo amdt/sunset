@@ -1,5 +1,5 @@
-Version: 1.1.0  
-Last Change: 2012 Oct 28
+Version: 1.2.0  
+Last Change: 2012 Nov 5
 
 # Sunset
 
