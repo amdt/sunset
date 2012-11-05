@@ -1,5 +1,5 @@
-Version: 1.1.0  
-Last Change: 2012 Oct 28
+Version: 1.2.0  
+Last Change: 2012 Nov 5
 
 # Sunset
 
@@ -7,11 +7,13 @@ Last Change: 2012 Oct 28
 
 Sunset automatically sets `background` when the sun rises and sets, and also when you start Vim. When the sun is up, or rises, it'll `set background=light` and when the sun is down, or sets, it'll `set background=dark`.
 
+Sunset can also change your `colorscheme`, your [Powerline](https://github.com/Lokaltog/vim-powerline) theme, or anything else you can think of. See `sunset_daytime_callback()` and `sunset_nighttime_callback()` in the documentation for details.
+
 So as not to interrupt you, Sunset waits for four seconds (on the `CursorHold` event) after you've pressed a key or left insert mode before changing the background. If you change your background during the day or night, it'll respect that.
 
 You must set some options in your `.vimrc` for Sunset to work, so please read on for details.
 
-If you feel that Sunset can be improved, pull requests and issues are appreciated and humbly requested.
+If you feel that Sunset can be improved, pull requests (on the `develop` branch, please) and issues are appreciated and humbly requested.
 
 ## Installation
 
@@ -37,6 +39,9 @@ And install:
     - `%j` returns the current day of the year.
     - `%H` returns the current hour of the day in 24-hour time.
     - `%M` returns the current minute of the hour.
+
+### Recommended:
+
 * A colorscheme with light and dark variants, such as [Solarized](http://github.com/altercation/vim-colors-solarized) or [Hemisu](http://github.com/noahfrederick/Hemisu).
 
 ## Configuration
