@@ -223,6 +223,10 @@ your nearest large city might suffice; Sunset will be plenty accurate enough.
 
 VERSION HISTORY                                     *sunset-version-history*
 
+1.2.1 (Thu Nov 22, 2012) ~
+
+    - Fix table of contents numbering in documentation.
+
 1.2.0 (Mon Nov 5, 2012) ~
 
     - |GetLatestVimScripts|-compatible.
