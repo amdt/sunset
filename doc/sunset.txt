@@ -50,11 +50,11 @@ CONTENTS                                                   *sunset-contents*
           a) 'g:loaded_sunset'  . . . . . . . . . . . . .  |'loaded_sunset'|
           b) 'g:sunset_daytime_callback()' &   |'sunset_daytime_callback()'|
              'g:sunset_nighttime_callback()' |'sunset_nighttime_callback()'|
-      4. A Reminder on Privacy  . . . . . . . . . . . . . . |sunset-privacy|
-      5. Version History  . . . . . . . . . . . . . |sunset-version-history|
-      6. Known Issues . . . . . . . . . . . . . . . .  |sunset-known-issues|
-      7. License  . . . . . . . . . . . . . . . . . . . . . |sunset-license|
-      8. Credits  . . . . . . . . . . . . . . . . . . . . . |sunset-credits|
+      5. A Reminder on Privacy  . . . . . . . . . . . . . . |sunset-privacy|
+      6. Version History  . . . . . . . . . . . . . |sunset-version-history|
+      7. Known Issues . . . . . . . . . . . . . . . .  |sunset-known-issues|
+      8. License  . . . . . . . . . . . . . . . . . . . . . |sunset-license|
+      9. Credits  . . . . . . . . . . . . . . . . . . . . . |sunset-credits|
 
 INSTALLATION                                           *sunset-installation*
 
