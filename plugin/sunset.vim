@@ -79,7 +79,7 @@ function s:hours_and_minutes_to_minutes(hours, minutes)
 endfunction
 
 function s:daytimep(current_time)
-	if a:current_time <= s:SUNRISE_TIME || a:current_time >= s:SUNSET_TIME
+	if a:current_time <= (s:SUNRISE_TIME - 30) || a:current_time >= (s:SUNSET_TIME + 30)
 		return 0
 	else
 		return 1
