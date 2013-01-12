@@ -3,6 +3,12 @@ Last Change: 2012 Nov 22
 
 # Sunset
 
+## 2.0.0
+
+*Note:* Sunset 2.0.0 breaks compatibility with previous versions of Sunset for
+users of the `sunset_callback()` callback. `sunset_daytime_callback()` and
+`sunset_nighttime_callback()` are unaffected.
+
 ## Introduction
 
 Sunset automatically sets `background` when the sun rises and sets, and also
@@ -53,6 +59,9 @@ And install:
     - `%H` returns the current hour of the day in 24-hour time.
     - `%M` returns the current minute of the hour.
 
+Note: If your system's |strftime()| differs, please open an issue on the
+Github page at: http://github.com/amdt/sunset/issues with details.
+
 ### Recommended:
 
 * A colorscheme with light and dark variants, such as
@@ -61,8 +70,8 @@ And install:
 
 ## Configuration
 
-*Note:* If you push your dotfiles to Github, please see the section titled 'A
-Reminder on Privacy'.
+*Note:* If you push your dotfiles to (for example) Github, please see the
+section titled 'A Reminder on Privacy'.
 
 ### g:sunset\_latitude & g:sunset\_longitude
 
@@ -107,10 +116,11 @@ let g:sunset_utc_offset = 9 " Tokyo
 
 ## A Reminder on Privacy
 
-For those of us who publish our dotfiles on Github etc., please take this as a
-gentle reminder that out of habit you might be about to publish your
-whereabouts to the greater public. If this concerns you, using the location of
-your nearest large city might suffice; Sunset will be plenty accurate enough.
+For those of us who publish our dotfiles on (for example) Github etc., please
+take this as a gentle reminder that out of habit you might be about to publish
+your whereabouts to the greater public. If this concerns you, using the
+location of your nearest large city might suffice; Sunset will be plenty
+accurate enough.
 
 ## License
 
