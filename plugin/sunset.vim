@@ -16,7 +16,6 @@ endif
 let g:loaded_sunset = 1
 
 let s:errors = []
-let s:warnings = []
 
 if v:version < 703
 	call add(s:errors, "Requires Vim 7.3")
@@ -28,10 +27,6 @@ endif
 
 if !exists("*strftime")
 	call add(s:errors, "Requires a system with strftime()")
-endif
-
-if exists('*g:sunset_callback')
-	call add(s:warnings, "sunset_callback() has been deprecated and will be removed in the next release. Please see `:h 'sunset_daytime_callback()'` & `:h 'sunset_nighttime_callback()'`")
 endif
 
 let s:required_options =
@@ -54,12 +49,6 @@ if !empty(s:errors)
 		echoerr error
 	endfor
 	finish
-endif
-
-if !empty(s:warnings)
-	for warning in s:warnings
-		echoerr warning
-	endfor
 endif
 
 let s:save_cpo = &cpo
@@ -220,9 +209,6 @@ function s:sunset()
 			let s:NIGHTTIME_CHECKED = 1
 			let s:DAYTIME_CHECKED = 0
 		endif
-	endif
-	if exists('*g:sunset_callback')
-		call g:sunset_callback()
 	endif
 endfunction
 
