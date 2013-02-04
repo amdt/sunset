@@ -60,7 +60,8 @@ let s:PI = 3.14159265359
 let s:ZENITH = 90
 let s:SUNRISE = 1
 let s:SUNSET = 0
-lockvar s:PI s:ZENITH s:SUNRISE s:SUNSET
+let s:CIVIL_TWILIGHT_DURATION = 30
+lockvar s:PI s:ZENITH s:SUNRISE s:SUNSET s:CIVIL_TWILIGHT_DURATION
 
 let s:DAYTIME_CHECKED = 0
 let s:NIGHTTIME_CHECKED = 0
@@ -70,7 +71,7 @@ function s:hours_and_minutes_to_minutes(hours, minutes)
 endfunction
 
 function s:daytimep(current_time)
-	if a:current_time <= (s:SUNRISE_TIME - 15) || a:current_time >= (s:SUNSET_TIME + 15)
+	if a:current_time <= (s:SUNRISE_TIME - (s:CIVIL_TWILIGHT_DURATION / 2)) || a:current_time >= (s:SUNSET_TIME + (s:CIVIL_TWILIGHT_DURATION / 2))
 		return 0
 	else
 		return 1
