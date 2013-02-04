@@ -10,18 +10,18 @@ FRONT MATTER                                           *sunset-front-matter*
 INTRODUCTION AND USAGE                    *sunset* *sunset-introduction-usage*
 
 Sunset automatically sets 'background' when the sun rises and sets, and also
-when you start Vim. When the sun is up, or rises, it'll
-'set background=light'. When the sun is down, or sets,
-it'll 'set background=dark'.
+when you start Vim. When the sun is up, or rises, it’ll
+‘set background=light’. When the sun is down, or sets,
+it’ll ‘set background=dark’.
 
 Sunset can also change your |colorscheme|, your Powerline theme, or anything
 else you can think of. See |'sunset_daytime_callback()'| and
 |'sunset_nighttime_callback()'| for details.
 
 So as not to interrupt you, Sunset waits for four seconds (on the
-|CursorHold| event) after you've pressed a key or left insert mode before
+|CursorHold| event) after you’ve pressed a key or left insert mode before
 changing the background. If you change your background during the day or
-night, it'll respect that.
+night, it’ll respect that.
 
 You must set some options in your `.vimrc` for Sunset to work, so
 please read on to |sunset-configuration| for details.
@@ -43,13 +43,13 @@ CONTENTS                                                   *sunset-contents*
           c) Manually . . . . . . . . . . . . . |sunset-installation-manual|
       2. Requirements . . . . . . . . . . . . . . . .  |sunset-requirements|
       3. Configuration (required) . . . . .  |sunset-configuration-required|
-          a) 'g:sunset_latitude' &  . . . . . . . . . .  |'sunset_latitude'|
-             'g:sunset_longitude' . . . . . . . . . . . |'sunset_longitude'|
-          b) 'g:sunset_utc_offset'  . . . . . . . . .  |'sunset_utc_offset'|
+          a) ‘g:sunset_latitude’ &  . . . . . . . . . .  |'sunset_latitude'|
+             ‘g:sunset_longitude’ . . . . . . . . . . . |'sunset_longitude'|
+          b) ‘g:sunset_utc_offset’  . . . . . . . . .  |'sunset_utc_offset'|
       4. Configuration (optional) . . . . .  |sunset-configuration-optional|
-          a) 'g:loaded_sunset'  . . . . . . . . . . . . .  |'loaded_sunset'|
-          b) 'g:sunset_daytime_callback()' &   |'sunset_daytime_callback()'|
-             'g:sunset_nighttime_callback()' |'sunset_nighttime_callback()'|
+          a) ‘g:loaded_sunset’  . . . . . . . . . . . . .  |'loaded_sunset'|
+          b) ‘g:sunset_daytime_callback()’ &   |'sunset_daytime_callback()'|
+             ‘g:sunset_nighttime_callback()’ |'sunset_nighttime_callback()'|
       5. A Reminder on Privacy  . . . . . . . . . . . . . . |sunset-privacy|
       6. Version History  . . . . . . . . . . . . . |sunset-version-history|
       7. Known Issues . . . . . . . . . . . . . . . .  |sunset-known-issues|
@@ -62,7 +62,7 @@ With a Plugin Manager:                  *sunset-installation-plugin-manager*
 
 Vundle: ~
 
-If you don't already have a preferred manager, I recommend installing Vundle
+If you don’t already have a preferred manager, I recommend installing Vundle
 (http://github.com/gmarik/vundle). Once done, add the declaration for Sunset
 to your `.vimrc`:
 >
@@ -74,7 +74,7 @@ And install:
 <
 Pathogen: ~
 
-If you're using Pathogen, simply extract the archive to `$HOME/.vim/bundle` or
+If you’re using Pathogen, simply extract the archive to `$HOME/.vim/bundle` or
 better yet, clone the Git repository. In a UNIX shell, for example:
 >
     cd ~/.vim/bundle
@@ -106,7 +106,7 @@ directory tree for Sunset is as follows:
 Place `sunset.txt` under `$HOME/.vim/doc` and `sunset.vim` under
 `$HOME/.vim/plugin` where `$HOME` is the location of your `.vim` directory.
 
-You can find this by typing '|:echo| |$HOME|'.
+You can find this by typing ‘|:echo| |$HOME|’.
 
 You can safely discard of `README.markdown` and `CONTRIBUTING.markdown`.
 
@@ -120,7 +120,7 @@ REQUIREMENTS                                           *sunset-requirements*
         - %H returns the current hour of the day in 24-hour time.
         - %M returns the current minute of the hour.
 
-Note: If your system's |strftime()| differs, please open an issue on the
+Note: If your system’s |strftime()| differs, please open an issue on the
 Github page at: http://github.com/amdt/sunset/issues with details.
 
 Recommended: ~
@@ -130,6 +130,7 @@ Recommended: ~
       (http://github.com/noahfrederick/Hemisu).
 
 CONFIGURATION (REQUIRED)                     *sunset-configuration-required*
+                                                      *sunset_configuration*
 
 'g:sunset_latitude' & 'g:sunset_longitude'               *'sunset_latitude'*
                                                         *'sunset_longitude'*
@@ -156,7 +157,7 @@ as follows:
     let g:sunset_latitude = 35.67
     let g:sunset_longitude = 139.8
 <
-Note: Don't forget, negative values South and West.
+Note: Don’t forget, negative values South and West.
 
 'g:sunset_utc_offset'                                  *'sunset_utc_offset'*
 
@@ -182,8 +183,8 @@ Set to a non-0 value to disable Sunset, for example:
 'g:sunset_daytime_callback()' &                *'sunset_daytime_callback()'*
 'g:sunset_nighttime_callback()'              *'sunset_nighttime_callback()'*
 
-These two callbacks can be used to override Sunset's behaviour by adding your
-own. If you define either of these callbacks, Sunset's default behaviour of
+These two callbacks can be used to override Sunset’s behaviour by adding your
+own. If you define either of these callbacks, Sunset’s default behaviour of
 setting 'background' will be ignored, and your function will be called
 instead.
 
@@ -216,7 +217,7 @@ You could change the theme used by Powerline*:
     endfunction
 >
 
-* Powerline is 'the ultimate vim statusline utility'. It's very cool; you
+* Powerline is ‘the ultimate vim statusline utility’. It’s very cool; you
   should check it out: https://github.com/Lokaltog/vim-powerline
 
 A REMINDER ON PRIVACY                                       *sunset-privacy*
@@ -252,7 +253,7 @@ VERSION HISTORY                                     *sunset-version-history*
 1.1.0 (Sun Oct 28, 2012) ~
 
     - Added `sunset_callback()`.
-        Courtesy of Github user 'delphinus35'
+        Courtesy of Github user ‘delphinus35’
         (http://github.com/amdt/sunset/pull/1)
 
 1.0.3 (Sat Oct 20, 2012) ~
@@ -290,7 +291,7 @@ Special thanks: ~
     * Gueorgui Tcherednitchenko --- Whose tweet
       (http://twitter.com/gueorgui/statuses/250765514975113216)
       inspired the development of this plugin.
-    * Nick Rogers --- Whose testing helped define Sunset's requirements.
+    * Nick Rogers --- Whose testing helped define Sunset’s requirements.
 
                                     * * *
 
