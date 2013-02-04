@@ -15,6 +15,8 @@ if exists("g:loaded_sunset")
 endif
 let g:loaded_sunset = 1
 
+scriptencoding utf-8
+
 let s:errors = []
 
 if v:version < 703
