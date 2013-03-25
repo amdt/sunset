@@ -31,8 +31,9 @@ if !exists("*strftime")
 	call add(s:errors, "Requires a system with strftime()")
 endif
 
-let s:required_options =
-			\ ["g:sunset_latitude", "g:sunset_longitude", "g:sunset_utc_offset"]
+let s:required_options = ["g:sunset_latitude",
+                        \ "g:sunset_longitude",
+                        \ "g:sunset_utc_offset"]
 
 for option in s:required_options
 	if exists(option)
@@ -108,11 +109,10 @@ function s:calculate(sunrisep)
 	let l:mean_anomaly = (0.9856 * l:approximate_time) - 3.289
 
 	" 4. Calculate the Sun's true longitude
-	let l:true_longitude =
-				\ l:mean_anomaly +
-				\ (1.916 * sin(l:degrees_to_radians(l:mean_anomaly))) +
-				\ (0.020 * sin(l:degrees_to_radians(2) * l:degrees_to_radians(l:mean_anomaly))) +
-				\ 282.634
+	let l:true_longitude = l:mean_anomaly +
+	                     \ (1.916 * sin(l:degrees_to_radians(l:mean_anomaly))) +
+	                     \ (0.020 * sin(l:degrees_to_radians(2) * l:degrees_to_radians(l:mean_anomaly))) +
+	                     \ 282.634
 	
 	if l:true_longitude < 0
 		let l:true_longitude = l:true_longitude + 360
@@ -121,8 +121,7 @@ function s:calculate(sunrisep)
 	endif
 	
 	" 5a. Calculate the Sun's right ascension
-	let l:right_ascension =
-				\ l:radians_to_degrees(atan(0.91764 * tan(l:degrees_to_radians(l:true_longitude))))
+	let l:right_ascension = l:radians_to_degrees(atan(0.91764 * tan(l:degrees_to_radians(l:true_longitude))))
 
 	if l:right_ascension < 0
 		let l:right_ascension = l:right_ascension + 360
@@ -135,22 +134,21 @@ function s:calculate(sunrisep)
 	let l:true_longitude_quadrant = (floor(l:true_longitude / 90)) * 90
 	let l:right_ascension_quadrant = (floor(l:right_ascension / 90)) * 90
 	let l:right_ascension = l:right_ascension +
-				\ (l:true_longitude_quadrant - l:right_ascension_quadrant)
+	                      \ (l:true_longitude_quadrant -
+	                      \ l:right_ascension_quadrant)
 
 	" 5c. Right ascension value needs to be converted into hours
 	let l:right_ascension = l:right_ascension / 15
 
 	" 6. Calculate the Sun's declination
-	let l:sin_declination =
-				\ 0.39782 *
-				\ sin(l:degrees_to_radians(l:true_longitude))
-	let l:cos_declination =
-				\ cos(asin(l:degrees_to_radians(l:sin_declination)))
+	let l:sin_declination = 0.39782 *
+	                        sin(l:degrees_to_radians(l:true_longitude))
+
+	let l:cos_declination = cos(asin(l:degrees_to_radians(l:sin_declination)))
 
 	" 7a. Calculate the Sun's local hour angle
-	let l:cos_hour_angle =
-				\ (cos(l:degrees_to_radians(s:ZENITH)) - (l:sin_declination * sin(l:degrees_to_radians(g:sunset_latitude)))) /
-				\ (l:cos_declination * cos(l:degrees_to_radians(g:sunset_latitude)))
+	let l:cos_hour_angle = (cos(l:degrees_to_radians(s:ZENITH)) - (l:sin_declination * sin(l:degrees_to_radians(g:sunset_latitude)))) /
+	                     \ (l:cos_declination * cos(l:degrees_to_radians(g:sunset_latitude)))
 
 	if l:cos_hour_angle > 1
 		" the sun never rises on this location (on the specified date)
@@ -168,11 +166,10 @@ function s:calculate(sunrisep)
 	let l:hour = l:hour / 15
 
 	" 8. Calculate local mean time of rising/setting
-	let l:mean_time =
-				\ l:hour +
-				\ l:right_ascension -
-				\ (0.06571 * l:approximate_time) -
-				\ 6.622
+	let l:mean_time = l:hour +
+	                \ l:right_ascension -
+	                \ (0.06571 * l:approximate_time) -
+	                \ 6.622
 
 	" 9. Adjust back to UTC
 	let l:universal_time = l:mean_time - l:longitude_hour
@@ -188,7 +185,7 @@ function s:calculate(sunrisep)
 	endif
 
 	return s:hours_and_minutes_to_minutes(float2nr(l:local_time),
-				\ s:minutes_from_decimal(l:local_time))
+	                                    \ s:minutes_from_decimal(l:local_time))
 endfunction
 
 function s:sunset()
