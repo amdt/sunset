@@ -14,14 +14,14 @@ when you start Vim. When the sun is up, or rises, it’ll
 ‘set background=light’. When the sun is down, or sets,
 it’ll ‘set background=dark’.
 
-Sunset can also change your |colorscheme|, your Powerline theme, or anything
-else you can think of. See |'sunset_daytime_callback()'| and
+Sunset can also change your |colorscheme|, your Powerline theme, or do
+anything else you can think of. See |'sunset_daytime_callback()'| and
 |'sunset_nighttime_callback()'| for details.
 
-So as not to interrupt you, Sunset waits for four seconds (on the
-|CursorHold| event) after you’ve pressed a key or left insert mode before
-changing the background. If you change your background during the day or
-night, it’ll respect that.
+So as not to interrupt you, Sunset waits for four seconds after you’ve pressed
+a key or left insert mode (ie. on the |CursorHold| event) before changing the
+background. If you change your background during the day or night, it’ll
+respect that.
 
 You must set some options in your `.vimrc` for Sunset to work, so
 please read on to |sunset-configuration| for details.
@@ -93,22 +93,21 @@ Once loaded in Vim, run the following two commands:
 <
 Manually:                                       *sunset-installation-manual*
 
-Copy the files in the included zip archive into your 'runtimepath'. The
-directory tree for Sunset is as follows:
+Copy the files in the included zip archive into your 'runtimepath' as per the
+following figure. The directory tree for Sunset is on the left, and the
+resulting tree in your own home directory on the right:
 
-    /doc
-        sunset.txt
-    /plugin
-        sunset.vim
-	CONTRIBUTING.markdown
-    README.markdown
+    /doc                         :    `$HOME/.vim/doc`
+        sunset.txt               :        sunset.txt
+    /plugin                      :    `$HOME/.vim/plugin`
+        sunset.vim               :        sunset.vim
+	CONTRIBUTING.markdown    :
+    README.markdown              :
 
 Place `sunset.txt` under `$HOME/.vim/doc` and `sunset.vim` under
 `$HOME/.vim/plugin` where `$HOME` is the location of your `.vim` directory.
-
-You can find this by typing ‘|:echo| |$HOME|’.
-
-You can safely discard of `README.markdown` and `CONTRIBUTING.markdown`.
+You can find this by typing ‘|:echo| |$HOME|’. You can safely discard of
+`README.markdown` and `CONTRIBUTING.markdown`.
 
 REQUIREMENTS                                           *sunset-requirements*
 
@@ -121,7 +120,7 @@ REQUIREMENTS                                           *sunset-requirements*
         - %M returns the current minute of the hour.
 
 Note: If your system’s |strftime()| differs, please open an issue on the
-Github page at: http://github.com/amdt/sunset/issues with details.
+Github page at http://github.com/amdt/sunset/issues with details.
 
 Recommended: ~
 
