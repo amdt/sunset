@@ -228,6 +228,8 @@ your nearest large city might suffice; Sunset will be plenty accurate enough.
 
 VERSION HISTORY                                     *sunset-version-history*
 
+Sunset follows the Semantic Versioning specification (http://semver.org).
+
 2.0.0 (Sat Jan 12, 2013) ~
 
     - Sunset now switches your background (or calls your callbacks) mid-way

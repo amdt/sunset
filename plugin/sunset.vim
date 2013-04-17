@@ -8,6 +8,8 @@
 " Last Change: 2013 Jan 12
 "       Usage: See 'doc/sunset.txt' or ':help sunset' if installed.
 "
+" Sunset follows the Semantic Versioning specification (http://semver.org).
+"
 " GetLatestVimScripts: 4277 19013 :AutoInstall: Sunset
 
 if exists("g:loaded_sunset")
