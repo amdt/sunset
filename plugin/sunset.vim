@@ -115,13 +115,13 @@ function s:calculate(sunrisep)
 	                     \ (1.916 * sin(l:degrees_to_radians(l:mean_anomaly))) +
 	                     \ (0.020 * sin(l:degrees_to_radians(2) * l:degrees_to_radians(l:mean_anomaly))) +
 	                     \ 282.634
-	
+
 	if l:true_longitude < 0
 		let l:true_longitude = l:true_longitude + 360
 	elseif l:true_longitude >= 360
 		let l:true_longitude = l:true_longitude - 360
 	endif
-	
+
 	" 5a. Calculate the Sun's right ascension
 	let l:right_ascension = l:radians_to_degrees(atan(0.91764 * tan(l:degrees_to_radians(l:true_longitude))))
 
@@ -130,7 +130,7 @@ function s:calculate(sunrisep)
 	elseif l:right_ascension >= 360
 		let l:right_ascension = l:right_ascension - 360
 	endif
-	
+
 	" 5b. Right ascension value needs to be in the same quadrant as
 	" l:true_longitude
 	let l:true_longitude_quadrant = (floor(l:true_longitude / 90)) * 90
@@ -175,7 +175,7 @@ function s:calculate(sunrisep)
 
 	" 9. Adjust back to UTC
 	let l:universal_time = l:mean_time - l:longitude_hour
-	
+
 	" 10. Convert l:universal_time value to local time zone of
 	" latitude/longitude
 	let l:local_time = l:universal_time + g:sunset_utc_offset
