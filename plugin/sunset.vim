@@ -94,7 +94,7 @@ function s:calculate(sunrisep)
 		return (180 / s:PI) * a:radians
 	endfunction
 
-	function! s:minutes_from_decimal(number)
+	function! l:minutes_from_decimal(number)
 		return float2nr(60.0 / 100 * (a:number - floor(a:number)) * 100)
 	endfunction
 
@@ -187,7 +187,7 @@ function s:calculate(sunrisep)
 	endif
 
 	return s:hours_and_minutes_to_minutes(float2nr(l:local_time),
-	                                    \ s:minutes_from_decimal(l:local_time))
+	                                    \ l:minutes_from_decimal(l:local_time))
 endfunction
 
 function s:sunset()
