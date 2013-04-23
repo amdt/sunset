@@ -12,6 +12,9 @@
 "
 " GetLatestVimScripts: 4277 19013 :AutoInstall: Sunset
 
+let s:save_cpo = &cpo
+set cpo&vim
+
 if exists("g:loaded_sunset")
 	finish
 endif
@@ -55,9 +58,6 @@ if !empty(s:errors)
 	endfor
 	finish
 endif
-
-let s:save_cpo = &cpo
-set cpo&vim
 
 let s:PI = 3.14159265359
 let s:ZENITH = 90
