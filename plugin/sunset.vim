@@ -144,7 +144,7 @@ function s:calculate(sunrisep)
 
 	" 6. Calculate the Sun's declination
 	let l:sin_declination = 0.39782 *
-	                        sin(l:degrees_to_radians(l:true_longitude))
+	                      \ sin(l:degrees_to_radians(l:true_longitude))
 
 	let l:cos_declination = cos(asin(l:degrees_to_radians(l:sin_declination)))
 
