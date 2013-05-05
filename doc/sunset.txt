@@ -101,7 +101,7 @@ resulting tree in your own home directory on the right:
         sunset.txt               :        sunset.txt
     /plugin                      :    `$HOME/.vim/plugin`
         sunset.vim               :        sunset.vim
-        CONTRIBUTING.markdown    :
+    CONTRIBUTING.markdown        :
     README.markdown              :
 
 Place `sunset.txt` under `$HOME/.vim/doc` and `sunset.vim` under
