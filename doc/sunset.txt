@@ -234,7 +234,7 @@ Sunset follows the Semantic Versioning specification (http://semver.org).
 
     - Sunset now switches your background (or calls your callbacks) mid-way
       through Civil Twilight time.
-    - *Note:* Sunset 2.0.0 breaks compatibility with previous versions of
+    - Note: Sunset 2.0.0 breaks compatibility with previous versions of
       Sunset for users of the `sunset_callback()` callback.
       |'sunset_daytime_callback()'| and |'sunset_nighttime_callback()'| are
       unaffected.
