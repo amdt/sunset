@@ -71,8 +71,10 @@ Requirements
   + ``%H`` returns the current hour of the day in 24-hour time.
   + ``%M`` returns the current minute of the hour.
 
-Note: If your system's |strftime()| differs, please open an issue on the
-Github page at: http://github.com/amdt/sunset/issues with details.
+Note: If your system's |strftime()| differs, please `open an issue on the
+project's GitHub page`_ with details.
+
+.. _`open an issue on the project's GitHub page`: http://github.com/amdt/sunset/issues
 
 Recommended:
 ~~~~~~~~~~~~
@@ -85,7 +87,7 @@ Recommended:
 Configuration
 -------------
 
-**Note:** If you push your dotfiles to (for example) Github, please see the
+**Note:** If you push your dotfiles to (for example) GitHub, please see the
 section titled '`A Reminder on Privacy`_'.
 
 g:sunset_latitude & g:sunset_longitude
@@ -134,7 +136,7 @@ For example:
 A Reminder on Privacy
 ---------------------
 
-For those of us who publish our dotfiles on (for example) Github etc., please
+For those of us who publish our dotfiles on (for example) GitHub etc., please
 take this as a gentle reminder that out of habit you might be about to publish
 your whereabouts to the greater public.  If this concerns you, using the
 location of your nearest large city might suffice; Sunset will be plenty
