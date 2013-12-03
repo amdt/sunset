@@ -71,7 +71,7 @@ Requirements
   + ``%H`` returns the current hour of the day in 24-hour time.
   + ``%M`` returns the current minute of the hour.
 
-Note: If your system's |strftime()| differs, please `open an issue on the
+Note: If your system's ``strftime()`` differs, please `open an issue on the
 project's GitHub page`_ with details.
 
 .. _`open an issue on the project's GitHub page`: http://github.com/amdt/sunset/issues
