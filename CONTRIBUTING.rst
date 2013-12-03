@@ -1,7 +1,8 @@
-How to Contribute
-=================
+===================
+ How to Contribute
+===================
 
-If you feel that Sunset can be improved, pull requests (on the `develop`
+If you feel that Sunset can be improved, pull requests (on the ``develop``
 branch, please) and issues are appreciated and humbly requested, on Github at:
 http://github.com/amdt/sunset
 
