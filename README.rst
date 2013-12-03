@@ -45,11 +45,13 @@ installing Vundle_. Once done, add the declaration for Sunset to your
 ``.vimrc``:
 
 .. code:: VimL
+
    Bundle 'amdt/sunset'
 
 And install:
 
 .. code:: VimL
+
    :BundleInstall
 
 **Note:** other installation methods are detailed in the included
@@ -99,6 +101,7 @@ In decimal, this is 51.5 degrees North, 0.1167 degrees West.
 If you lived in London, you might set these options as follows:
 
 .. code:: VimL
+
    let g:sunset_latitude = 51.5
    let g:sunset_longitude = -0.1167
 
@@ -107,6 +110,7 @@ degrees, 46 minutes and 12 seconds East), you might set these options
 as follows:
 
 .. code:: VimL
+
    let g:sunset_latitude = 35.67
    let g:sunset_longitude = 139.8
 
@@ -120,6 +124,7 @@ The difference in hours between your timezone and Coordinated Universal Time.
 For example:
 
 .. code:: VimL
+
    let g:sunset_utc_offset = 0 " London
    let g:sunset_utc_offset = 1 " London (British Summer Time)
    let g:sunset_utc_offset = 9 " Tokyo
