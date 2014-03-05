@@ -12,13 +12,13 @@
 "
 " GetLatestVimScripts: 4277 19013 :AutoInstall: Sunset
 
-let s:save_cpo = &cpo
-set cpo&vim
-
 if exists("g:loaded_sunset")
 	finish
 endif
 let g:loaded_sunset = 1
+
+let s:save_cpo = &cpo
+set cpo&vim
 
 scriptencoding utf-8
 
