@@ -12,13 +12,20 @@
 "
 " GetLatestVimScripts: 4277 19013 :AutoInstall: Sunset
 
+let s:save_cpo = &cpo
+set cpo&vim
+
+" Clean up 'cpoptions' wherever this script should be terminated.
+function s:restore_cpoptions()
+	let &cpo = s:save_cpo
+	unlet s:save_cpo
+endfunction
+
 if exists("g:loaded_sunset")
+	call s:restore_cpoptions()
 	finish
 endif
 let g:loaded_sunset = 1
-
-let s:save_cpo = &cpo
-set cpo&vim
 
 scriptencoding utf-8
 
@@ -56,6 +63,7 @@ if !empty(s:errors)
 	for error in s:errors
 		echoerr error
 	endfor
+	call s:restore_cpoptions()
 	finish
 endif
 
@@ -220,5 +228,4 @@ call s:sunset()
 
 autocmd CursorHold * nested call s:sunset()
 
-let &cpo = s:save_cpo
-unlet s:save_cpo
+call s:restore_cpoptions()
