@@ -21,7 +21,7 @@ function s:restore_cpoptions()
 	unlet s:save_cpo
 endfunction
 
-if exists("g:loaded_sunset")
+if exists('g:loaded_sunset')
 	call s:restore_cpoptions()
 	finish
 endif
@@ -32,20 +32,20 @@ scriptencoding utf-8
 let s:errors = []
 
 if v:version < 703
-	call add(s:errors, "Requires Vim 7.3")
+	call add(s:errors, 'Requires Vim 7.3')
 endif
 
-if !has("float")
-	call add(s:errors, "Requires Vim be compiled with +float support.")
+if !has('float')
+	call add(s:errors, 'Requires Vim be compiled with +float support.')
 endif
 
-if !exists("*strftime")
-	call add(s:errors, "Requires a system with strftime()")
+if !exists('*strftime')
+	call add(s:errors, 'Requires a system with strftime()')
 endif
 
-let s:required_options = ["g:sunset_latitude",
-                        \ "g:sunset_longitude",
-                        \ "g:sunset_utc_offset"]
+let s:required_options = ['g:sunset_latitude',
+                        \ 'g:sunset_longitude',
+                        \ 'g:sunset_utc_offset']
 
 for option in s:required_options
 	if exists(option)
@@ -55,7 +55,7 @@ endfor
 
 if !empty(s:required_options)
 	for option in s:required_options
-		call add(s:errors, printf("%s missing! See ':help %s' for more details.", option, option))
+		call add(s:errors, printf('%s missing! See '':help %s'' for more details.', option, option))
 	endfor
 endif
 
@@ -107,7 +107,7 @@ function s:calculate(sunrisep)
 	endfunction
 
 	" 1. First calculate the day of the year
-	let l:day_of_year = strftime("%j")
+	let l:day_of_year = strftime('%j')
 
 	" 2. Convert the longitude to hour value and calculate an approximate time
 	let l:longitude_hour = g:sunset_longitude / 15
@@ -199,7 +199,7 @@ function s:calculate(sunrisep)
 endfunction
 
 function s:sunset()
-	if s:daytimep(s:hours_and_minutes_to_minutes(strftime("%H"), strftime("%M")))
+	if s:daytimep(s:hours_and_minutes_to_minutes(strftime('%H'), strftime('%M')))
 		if s:DAYTIME_CHECKED != 1
 			if exists('*g:sunset_daytime_callback')
 				call g:sunset_daytime_callback()
