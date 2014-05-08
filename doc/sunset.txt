@@ -228,6 +228,11 @@ your nearest large city might suffice; Sunset will be plenty accurate enough.
 
 VERSION HISTORY                                     *sunset-version-history*
 
+2.0.1 (Thu May 8, 2014) ~
+
+    - Fixed an issue where versions of Vim greater than 7.4.260 would not
+      allow this script to run. (https://github.com/amdt/sunset/issues/8)
+
 2.0.0 (Sat Jan 12, 2013) ~
 
     - Sunset now switches your background (or calls your callbacks) mid-way

@@ -3,12 +3,6 @@ Last Change: 2013 Jan 12
 
 # Sunset
 
-## 2.0.0
-
-*Note:* Sunset 2.0.0 breaks compatibility with previous versions of Sunset for
-users of the `sunset_callback()` callback. `sunset_daytime_callback()` and
-`sunset_nighttime_callback()` are unaffected.
-
 ## Introduction
 
 Sunset automatically sets `background` when the sun rises and sets, and also
