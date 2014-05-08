@@ -1,16 +1,9 @@
-:Version: 2.0.0
-:Date: 2013-01-12
+:Version: 2.0.1
+:Date: 2014-05-08
 
 ========
  Sunset
 ========
-
-2.0.0
------
-
-**Note:** Sunset 2.0.0 breaks compatibility with previous versions of Sunset
-for users of the ``sunset_callback()`` callback.  ``sunset_daytime_callback()``
-and ``sunset_nighttime_callback()`` are unaffected.
 
 Introduction
 ------------
