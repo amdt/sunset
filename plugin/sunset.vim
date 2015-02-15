@@ -201,8 +201,8 @@ endfunction
 function s:sunset()
   if s:daytimep(s:hours_and_minutes_to_minutes(strftime('%H'), strftime('%M')))
     if s:DAYTIME_CHECKED != 1
-      if exists('*g:sunset_daytime_callback')
-        call g:sunset_daytime_callback()
+      if exists('*g:Sunset_daytime_callback')
+        call g:Sunset_daytime_callback()
       else
         set background=light
       endif
@@ -212,8 +212,8 @@ function s:sunset()
     endif
   else
     if s:NIGHTTIME_CHECKED != 1
-      if exists('*g:sunset_nighttime_callback')
-        call g:sunset_nighttime_callback()
+      if exists('*g:Sunset_nighttime_callback')
+        call g:Sunset_nighttime_callback()
       else
         set background=dark
       endif
