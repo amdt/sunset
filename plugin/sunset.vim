@@ -1,16 +1,15 @@
-"
 " sunset.vim - Automatically set background on local sunrise/sunset time.
 "
 "  Maintainer: Alastair Touw <alastair@touw.me.uk>
 "     Website: https://github.com/amdt/sunset
 "     License: Distributed under the same terms as Vim. See ':help license'.
-"     Version: 2.0.1
-" Last Change: 2014 May 08
+"     Version: 3.0.0
+" Last Change: 2015-02-22
 "       Usage: See 'doc/sunset.txt' or ':help sunset' if installed.
 "
 " Sunset follows the Semantic Versioning specification (http://semver.org).
 "
-" GetLatestVimScripts: 4277 19013 :AutoInstall: Sunset
+" GetLatestVimScripts: 4277 21872 :AutoInstall: Sunset
 
 let s:save_cpo = &cpo
 set cpo&vim

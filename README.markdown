@@ -1,5 +1,5 @@
-Version: 2.0.1  
-Date: 2014-05-08
+Version: 3.0.0  
+Date: 2015-02-22
 
 # Sunset
 
@@ -11,7 +11,7 @@ and when the sun is down, or sets, it'll `set background=dark`.
 
 Sunset can also change your `colorscheme`, your [Powerline
 theme](https://github.com/Lokaltog/vim-powerline), or anything else you can
-think of.  See `sunset_daytime_callback()` and `sunset_nighttime_callback()` in
+think of.  See `Sunset_daytime_callback()` and `Sunset_nighttime_callback()` in
 the documentation for details.
 
 So as not to interrupt you, Sunset waits for four seconds (on the `CursorHold`
