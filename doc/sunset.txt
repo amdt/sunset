@@ -29,7 +29,7 @@ please read on to |sunset-configuration| for details.
 CONTRIBUTIONS                                         *sunset-contributions*
 
 If you feel that Sunset can be improved, pull requests and issues are
-appreciated and humbly requested, on Github at: https://github.com/amdt/sunset
+appreciated and humbly requested, on GitHub at: https://github.com/amdt/sunset
 
 CONTENTS                                                   *sunset-contents*
 
@@ -120,7 +120,7 @@ REQUIREMENTS                                           *sunset-requirements*
         - %M returns the current minute of the hour.
 
 Note: If your system’s |strftime()| differs, please open an issue on the
-Github page at https://github.com/amdt/sunset/issues with details.
+GitHub page at https://github.com/amdt/sunset/issues with details.
 
 Recommended: ~
 
@@ -134,7 +134,7 @@ CONFIGURATION (REQUIRED)                     *sunset-configuration-required*
 'g:sunset_latitude' & 'g:sunset_longitude'               *'sunset_latitude'*
                                                         *'sunset_longitude'*
 
-Note: If you push your dotfiles to (for example) Github, please
+Note: If you push your dotfiles to (for example) GitHub, please
 see |sunset-privacy|.
 
 The latitude and longitude of your location in decimal. Values North and East
@@ -221,7 +221,7 @@ You could change the theme used by Powerline*:
 
 A REMINDER ON PRIVACY                                       *sunset-privacy*
 
-For those of us who publish our dotfiles on (for example) Github, please take
+For those of us who publish our dotfiles on (for example) GitHub, please take
 this as a gentle reminder that out of habit you might be about to publish your
 whereabouts to the greater public. If this concerns you, using the location of
 your nearest large city might suffice; Sunset will be plenty accurate enough.
@@ -259,7 +259,7 @@ Sunset follows the Semantic Versioning specification (http://semver.org).
 1.1.0 (Sun Oct 28, 2012) ~
 
     - Added `sunset_callback()`.
-        Courtesy of Github user ‘delphinus35’
+        Courtesy of GitHub user ‘delphinus35’
         (https://github.com/amdt/sunset/pull/1)
 
 1.0.3 (Sat Oct 20, 2012) ~
@@ -278,7 +278,7 @@ Sunset follows the Semantic Versioning specification (http://semver.org).
 KNOWN ISSUES                                           *sunset-known-issues*
 
 For known issues (and to report your own), please see the issue tracker on
-Github: https://github.com/amdt/sunset/issues
+GitHub: https://github.com/amdt/sunset/issues
 
 LICENSE                                                     *sunset-license*
 
