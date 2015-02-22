@@ -15,8 +15,8 @@ when you start Vim. When the sun is up, or rises, it’ll
 it’ll ‘set background=dark’.
 
 Sunset can also change your |colorscheme|, your Powerline theme, or do
-anything else you can think of. See |'sunset_daytime_callback()'| and
-|'sunset_nighttime_callback()'| for details.
+anything else you can think of. See |'Sunset_daytime_callback()'| and
+|'Sunset_nighttime_callback()'| for details.
 
 So as not to interrupt you, Sunset waits for four seconds after you’ve pressed
 a key or left insert mode (ie. on the |CursorHold| event) before changing the
@@ -48,8 +48,8 @@ CONTENTS                                                   *sunset-contents*
           b) ‘g:sunset_utc_offset’  . . . . . . . . .  |'sunset_utc_offset'|
       4. Configuration (optional) . . . . .  |sunset-configuration-optional|
           a) ‘g:loaded_sunset’  . . . . . . . . . . . . .  |'loaded_sunset'|
-          b) ‘g:sunset_daytime_callback()’ &   |'sunset_daytime_callback()'|
-             ‘g:sunset_nighttime_callback()’ |'sunset_nighttime_callback()'|
+          b) ‘Sunset_daytime_callback()’ &     |'Sunset_daytime_callback()'|
+             ‘Sunset_nighttime_callback()’   |'Sunset_nighttime_callback()'|
       5. A Reminder on Privacy  . . . . . . . . . . . . . . |sunset-privacy|
       6. Version History  . . . . . . . . . . . . . |sunset-version-history|
       7. Known Issues . . . . . . . . . . . . . . . .  |sunset-known-issues|
@@ -179,8 +179,8 @@ Set to a non-0 value to disable Sunset, for example:
     let g:loaded_sunset = 1
 <
 
-'g:sunset_daytime_callback()' &                *'sunset_daytime_callback()'*
-'g:sunset_nighttime_callback()'              *'sunset_nighttime_callback()'*
+'Sunset_daytime_callback()' &                  *'Sunset_daytime_callback()'*
+'Sunset_nighttime_callback()'                *'Sunset_nighttime_callback()'*
 
 These two callbacks can be used to override Sunset’s behaviour by adding your
 own. If you define either of these callbacks, Sunset’s default behaviour of
@@ -190,25 +190,25 @@ instead.
 For example, perhaps you want to use one |colorscheme| during the day, and
 another at night:
 >
-    function! g:sunset_daytime_callback()
-        colorscheme 'Hemisu'
+    function! Sunset_daytime_callback()
+        colorscheme Hemisu
     endfunction
 
-    function! g:sunset_nighttime_callback()
-        colorscheme 'Solarized'
+    function! Sunset_nighttime_callback()
+        colorscheme Solarized
     endfunction
 <
 
 You could change the theme used by Powerline*:
 >
-    function! g:sunset_daytime_callback()
+    function! Sunset_daytime_callback()
         if exists(':PowerlineReloadColorscheme')
             let g:Powerline_colorscheme = 'solarizedLight'
             PowerlineReloadColorscheme
         endif
     endfunction
 
-    function! g:sunset_nighttime_callback()
+    function! Sunset_nighttime_callback()
         if exists(':PowerlineReloadColorscheme')
             let g:Powerline_colorscheme = 'solarizedDark'
             PowerlineReloadColorscheme
