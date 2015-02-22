@@ -2,7 +2,7 @@
 " sunset.vim - Automatically set background on local sunrise/sunset time.
 "
 "  Maintainer: Alastair Touw <alastair@touw.me.uk>
-"     Website: http://github.com/amdt/sunset
+"     Website: https://github.com/amdt/sunset
 "     License: Distributed under the same terms as Vim. See ':help license'.
 "     Version: 2.0.1
 " Last Change: 2014 May 08

@@ -28,7 +28,7 @@ branch, please) and issues are appreciated and humbly requested.
 ## Installation
 
 If you don't already have a preferred installation method, I recommend
-installing [Vundle](http://github.com/gmarik/vundle).  Once done, add the
+installing [Vundle](https://github.com/gmarik/vundle).  Once done, add the
 declaration for Sunset to your `.vimrc`:
 
 ```VimL
@@ -56,13 +56,13 @@ documentation.
   * `%M` returns the current minute of the hour.
 
 *Note*: If your system's `strftime()` differs, please [open an issue on the
-project's GitHub page](http://github.com/amdt/sunset/issues) with details.
+project's GitHub page](https://github.com/amdt/sunset/issues) with details.
 
 ### Recommended:
 
 * A colorscheme with light and dark variants, such as
-  [Solarized](http://github.com/altercation/vim-colors-solarized) or
-  [Hemisu](http://github.com/noahfrederick/Hemisu).
+  [Solarized](https://github.com/altercation/vim-colors-solarized) or
+  [Hemisu](https://github.com/noahfrederick/Hemisu).
 
 ## Configuration
 

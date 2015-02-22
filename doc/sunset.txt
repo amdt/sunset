@@ -29,7 +29,7 @@ please read on to |sunset-configuration| for details.
 CONTRIBUTIONS                                         *sunset-contributions*
 
 If you feel that Sunset can be improved, pull requests and issues are
-appreciated and humbly requested, on Github at: http://github.com/amdt/sunset
+appreciated and humbly requested, on Github at: https://github.com/amdt/sunset
 
 CONTENTS                                                   *sunset-contents*
 
@@ -63,7 +63,7 @@ With a Plugin Manager:                  *sunset-installation-plugin-manager*
 Vundle: ~
 
 If you don’t already have a preferred manager, I recommend installing Vundle
-(http://github.com/gmarik/vundle). Once done, add the declaration for Sunset
+(https://github.com/gmarik/vundle). Once done, add the declaration for Sunset
 to your `.vimrc`:
 >
     Bundle 'amdt/sunset'
@@ -120,13 +120,13 @@ REQUIREMENTS                                           *sunset-requirements*
         - %M returns the current minute of the hour.
 
 Note: If your system’s |strftime()| differs, please open an issue on the
-Github page at http://github.com/amdt/sunset/issues with details.
+Github page at https://github.com/amdt/sunset/issues with details.
 
 Recommended: ~
 
     * A |colorscheme| with both light and dark variants, such as Solarized
-      (http://github.com/altercation/vim-colors-solarized) or Hemisu
-      (http://github.com/noahfrederick/Hemisu).
+      (https://github.com/altercation/vim-colors-solarized) or Hemisu
+      (https://github.com/noahfrederick/Hemisu).
 
 CONFIGURATION (REQUIRED)                     *sunset-configuration-required*
                                                       *sunset_configuration*
@@ -260,7 +260,7 @@ Sunset follows the Semantic Versioning specification (http://semver.org).
 
     - Added `sunset_callback()`.
         Courtesy of Github user ‘delphinus35’
-        (http://github.com/amdt/sunset/pull/1)
+        (https://github.com/amdt/sunset/pull/1)
 
 1.0.3 (Sat Oct 20, 2012) ~
 
@@ -278,7 +278,7 @@ Sunset follows the Semantic Versioning specification (http://semver.org).
 KNOWN ISSUES                                           *sunset-known-issues*
 
 For known issues (and to report your own), please see the issue tracker on
-Github: http://github.com/amdt/sunset/issues
+Github: https://github.com/amdt/sunset/issues
 
 LICENSE                                                     *sunset-license*
 
