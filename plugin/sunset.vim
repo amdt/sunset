@@ -42,6 +42,11 @@ if !exists('*strftime')
   call add(s:errors, 'Requires a system with strftime()')
 endif
 
+" Get the utc offset from the time zone offset
+if !exists('g:sunset_utc_offset')
+    let g:sunset_utc_offset = str2nr(strftime("%z")[:2])
+endif
+
 let s:required_options = ['g:sunset_latitude',
     \ 'g:sunset_longitude',
     \ 'g:sunset_utc_offset']
