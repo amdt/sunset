@@ -15,7 +15,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Clean up 'cpoptions' wherever this script should be terminated.
-function s:restore_cpoptions()
+function! s:restore_cpoptions()
   let &cpo = s:save_cpo
   unlet s:save_cpo
 endfunction
@@ -86,11 +86,11 @@ lockvar s:CIVIL_TWILIGHT_DURATION
 let s:DAYTIME_CHECKED = 0
 let s:NIGHTTIME_CHECKED = 0
 
-function s:hours_and_minutes_to_minutes(hours, minutes)
+function! s:hours_and_minutes_to_minutes(hours, minutes)
   return (a:hours * 60) + a:minutes
 endfunction
 
-function s:daytimep(current_time)
+function! s:daytimep(current_time)
   if a:current_time <= (s:SUNRISE_TIME - (s:CIVIL_TWILIGHT_DURATION / 2))
       \ || a:current_time >= (s:SUNSET_TIME + (s:CIVIL_TWILIGHT_DURATION / 2))
     return 0
@@ -103,7 +103,7 @@ endfunction
 " in the Almanac for Computers, 1990, by the Nautical Almanac Office of the
 " United States Naval Observatory, as detailed
 " here: http://williams.best.vwh.net/sunrise_sunset_algorithm.htm
-function s:calculate(sunrisep)
+function! s:calculate(sunrisep)
   function! s:degrees_to_radians(degrees)
     return (s:PI / 180) * a:degrees
   endfunction
@@ -202,7 +202,7 @@ function s:calculate(sunrisep)
       \ s:minutes_from_decimal(l:local_time))
 endfunction
 
-function s:sunset()
+function! s:sunset()
   if s:daytimep(s:hours_and_minutes_to_minutes(strftime('%H'), strftime('%M')))
     if s:DAYTIME_CHECKED != 1
       if exists('*Sunset_daytime_callback')
