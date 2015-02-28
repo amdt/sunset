@@ -158,9 +158,13 @@ as follows:
 <
 Note: Don’t forget, negative values South and West.
 
+CONFIGURATION (OPTIONAL)                     *sunset-configuration-optional*
+
 'g:sunset_utc_offset'                                  *'sunset_utc_offset'*
 
-The difference in hours between your timezone and Coordinated Universal Time.
+Sunset gets the local timezone from your system.  You can override this by
+setting the difference in hours between your timezone and Coordinated
+Universal Time (UTC).
 
 For example:
 >
@@ -169,8 +173,6 @@ For example:
     let g:sunset_utc_offset = 9 " Tokyo
 <
 Note: Sunset does not handle any daylight savings civil times.
-
-CONFIGURATION (OPTIONAL)                     *sunset-configuration-optional*
 
 'g:loaded_sunset'                                          *'loaded_sunset'*
 
