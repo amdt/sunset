@@ -1,5 +1,4 @@
-Version: 3.1.0  
-Date: 2015-02-28
+![GitHub tag](https://img.shields.io/github/tag/amdt/sunset.svg) ![GitHub last commit (master)](https://img.shields.io/github/last-commit/amdt/sunset/master.svg) ![License: Vim](https://img.shields.io/badge/license-Vim-green.svg)
 
 # Sunset
 
