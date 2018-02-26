@@ -3,6 +3,11 @@ Date: 2015-02-28
 
 # Sunset
 
+## Project Status
+
+This project is unmaintained and archived.  Feel free to exercise your right under the license to fork this
+project.
+
 ## Introduction
 
 Sunset automatically sets `background` when the sun rises and sets, and also
